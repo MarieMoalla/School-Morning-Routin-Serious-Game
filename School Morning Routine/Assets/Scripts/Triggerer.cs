@@ -9,13 +9,14 @@ public GameObject obj;
 
 void Start ()
 {
-    Load();
+    StartCoroutine(Load());
 }
 
-private IEnumerator Load() 
+IEnumerator Load() 
 {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
         obj.SetActive(true);
+        Debug.Log("oepn first");
 }
 
 }
