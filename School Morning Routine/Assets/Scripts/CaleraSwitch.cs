@@ -17,7 +17,14 @@ public class CaleraSwitch : MonoBehaviour
     // Call this function to enable FPS camera,
     // and disable overhead camera.
     public void ShowMainView() {
-        MainCamera.enabled = true;
-        overheadCamera.enabled = false;
+        StartCoroutine(Activate());
+    }
+
+    IEnumerator Activate() 
+    {
+            yield return new WaitForSeconds(1);
+            Debug.Log("switch");
+            MainCamera.enabled = true;
+            overheadCamera.enabled = false;
     }
 }

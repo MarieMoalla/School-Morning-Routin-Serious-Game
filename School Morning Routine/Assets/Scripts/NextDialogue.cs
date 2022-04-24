@@ -8,7 +8,9 @@ public class NextDialogue : MonoBehaviour
     public GameObject currentDialogue;
     public void onOpenDialogue()
     {
-        if(dialogue != null)    dialogue.SetActive(true);
+        if(dialogue != null)    
+        dialogue.SetActive(true);
         currentDialogue.SetActive(false);
     }
+    
 }
