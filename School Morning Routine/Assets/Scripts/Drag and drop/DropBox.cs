@@ -22,6 +22,7 @@ public class DropBox : MonoBehaviour, IDropHandler
 
     public void OnDrop (PointerEventData eventData)
     {
+        try{
         Debug.Log("OnDrop");
         score = Int32.Parse(scoreText.text);
         nbElementToInt = Int32.Parse(nbElement.text);
@@ -50,6 +51,9 @@ public class DropBox : MonoBehaviour, IDropHandler
             eventData.pointerDrag.SetActive(false);
             
         }
+        }
+        catch(Exception e)
+        {}
         
     }
     public void LostWin (int element)

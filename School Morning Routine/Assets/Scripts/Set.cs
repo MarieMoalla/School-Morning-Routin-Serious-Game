@@ -8,15 +8,20 @@ public class Set : MonoBehaviour
     public int counter;
 
     public void SetActive() {
-        obj.SetActive(true);
+        StartCoroutine(ExecuteActive());
     }
-    
+        IEnumerator ExecuteActive() 
+{
+        yield return new WaitForSeconds(counter);
+        obj.SetActive(true);
+        Debug.Log("oepn first");
+}
     // Call this function to enable FPS camera,
     // and disable overhead camera.
     public void Desactive() {
-        StartCoroutine(Execute());
+        StartCoroutine(ExecuteDesacrive());
     }
-    IEnumerator Execute() 
+    IEnumerator ExecuteDesacrive() 
 {
         yield return new WaitForSeconds(counter);
         obj.SetActive(false);
